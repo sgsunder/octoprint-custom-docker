@@ -30,9 +30,10 @@ RUN apk add --no-cache --virtual .build-deps \
  && apk del .build-deps
 
 COPY --chown=app:app config/ /etc/octoprint/
+COPY --chown=app:app init.sh /usr/local/bin/init
 
 WORKDIR /etc/octoprint
 USER app
-VOLUME ["/etc/octoprint/uploads", "/etc/octoprint/generated"]
+VOLUME ["/etc/octoprint"]
 EXPOSE 5000
-CMD ["/etc/octoprint/init"]
+CMD ["/usr/local/bin/init"]

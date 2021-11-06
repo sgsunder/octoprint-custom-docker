@@ -1,0 +1,28 @@
+version: "3"
+services:
+  octoprint:
+    build:
+      context: .
+    ports:
+      - 8080:5000
+    volumes:
+      - octoprint-tmpfs:/etc/octoprint:rw
+    env_file:
+      - ./access.env
+        # Format with following keys
+        # OCTO_USER     - Admin username
+        # OCTO_PASS     - Admin password
+        # OCTO_APIKEY_* - API Keys for apps (id:key) format
+    logging:
+      driver: local
+      options:
+        max-size: "1m"
+        max-file: "1"
+        compress: "false"
+    restart: always
+volumes:
+  octoprint-tmpfs:
+    driver: local
+    driver_opts:
+      type: tmpfs
+      device: tmpfs

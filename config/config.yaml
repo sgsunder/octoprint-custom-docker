@@ -20,22 +20,23 @@ serial:
   blockedCommands:
   - M0
   - M1
-  - M600
   pausingCommands:
   - M0
   - M1
   - M25
-  - M600
 server:
   firstRun: false
   onlineCheck:
     enabled: false
   pluginBlacklist:
     enabled: true
+  secretKey: QL2MBqmbZZZ4I6V4At7JslqtgJlfFiZq
   seenWizards:
-    backup: null
     corewizard: 4
+    backup: null
     tracking: null
+    cura: null
+    softwareupdate: null
 temperature:
   profiles:
   - bed: 70
