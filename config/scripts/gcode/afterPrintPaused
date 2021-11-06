@@ -1,2 +1,0 @@
-G1 Z{{ pause_position.z + 5 }} F4500
-G1 X0 Y{{ printer_profile.volume.depth }} F4500

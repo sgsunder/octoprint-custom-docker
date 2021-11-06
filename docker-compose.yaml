@@ -1,0 +1,32 @@
+version: "3"
+services:
+  octoprint:
+    build:
+      context: .
+    ports:
+      - 8080:5000
+    environment:
+      # Replace with your own values
+      OCTO_USER: ssunder
+      OCTO_PASS: hunter2
+    volumes:
+      # config.yaml, printer profile, and gcode scripts
+      # are the only real data that needs to persist:
+      - ./config/config.yaml:/etc/octoprint/config.yaml:rw
+      - ./config/printer.yaml:/etc/octoprint/printerProfiles/_default.profile:rw
+      - ./config/scripts.yaml:/etc/octoprint/scripts.yaml:ro
+      # generally a good idea to also persist webcache to speed up restarts
+      # but no need to back this data up
+      - webcache:/etc/octoprint/generated
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+    logging:
+      driver: local
+      options:
+        max-size: "1m"
+        max-file: "1"
+        compress: "false"
+    restart: always
+volumes:
+  uploads:
+  webcache:
