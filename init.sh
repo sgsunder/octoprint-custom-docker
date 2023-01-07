@@ -8,13 +8,14 @@ octoprint --iknowwhatimdoing -b /etc/octoprint \
 # Generate GCODE scripts
 python - <<'EOSCRIPT'
 from yaml import safe_load as loader
-try:
-    with open('scripts.yaml', 'r') as f:
-        for name, val in loader(f).items():
-            with open(f'scripts/gcode/{name}', 'w') as g:
-                g.write(val)
-except FileNotFoundError:
-    pass
+with open('scripts.yaml', 'r') as f:
+    for name, val in loader(f).items():
+        gname = f'scripts/gcode/{name}'
+        print(f'Writing to {gname}')
+        with open(gname, 'w') as g:
+            g.write(val)
+            print(val)
+            print()
 EOSCRIPT
 
 # Start OctoPrint
