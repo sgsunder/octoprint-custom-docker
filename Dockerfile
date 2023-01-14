@@ -35,8 +35,6 @@ RUN mkdir -p \
         "https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop/archive/refs/tags/1.0.5.tar.gz" \
  && apk del .build-deps
 
-COPY init.sh /usr/local/bin/init
-
 WORKDIR /etc/octoprint
 EXPOSE 5000
-CMD [ "/usr/local/bin/init" ]
+CMD [ "octoprint", "serve", "--iknowwhatimdoing", "-b", "/etc/octoprint" ]

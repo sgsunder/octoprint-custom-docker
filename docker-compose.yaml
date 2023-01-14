@@ -1,8 +1,7 @@
 version: "3"
 services:
   octoprint:
-    build:
-      context: .
+    image: ghcr.io/sgsunder/octoprint:latest
     ports:
       - 8080:5000
     environment:
@@ -10,11 +9,7 @@ services:
       OCTO_USER: ssunder
       OCTO_PASS: hunter2
     volumes:
-      # config.yaml, printer profile, and gcode scripts
-      # are the only real data that needs to persist:
-      - ./config/config.yaml:/etc/octoprint/config.yaml:rw
-      - ./config/printer.yaml:/etc/octoprint/printerProfiles/_default.profile:rw
-      - ./config/scripts.yaml:/etc/octoprint/scripts.yaml:ro
+      - ./config:/etc/octoprint:rw
       # generally a good idea to also persist webcache to speed up restarts
       # but no need to back this data up
       - webcache:/etc/octoprint/generated
