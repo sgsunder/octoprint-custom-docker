@@ -33,6 +33,7 @@ RUN mkdir -p \
         "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/archive/refs/tags/1.28.0.tar.gz" \
         "https://github.com/Salandora/octoprint-customControl/archive/refs/tags/0.2.2.tar.gz" \
         "https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop/archive/refs/tags/1.0.5.tar.gz" \
+		"https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.2.1.zip" \
  && apk del .build-deps
 
 WORKDIR /etc/octoprint
