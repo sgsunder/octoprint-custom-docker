@@ -39,3 +39,14 @@ RUN mkdir -p \
 WORKDIR /etc/octoprint
 EXPOSE 5000
 CMD [ "octoprint", "serve", "--iknowwhatimdoing", "-b", "/etc/octoprint" ]
+
+ARG BUILD_DATE="Unknown"
+ARG SOURCE_COMMIT="Unknown"
+LABEL \
+    maintainer="" \
+    org.opencontainers.image.title="ghcr.io/sgsunder/octoprint-custom-docker" \
+    org.opencontainers.image.url="https://github.com/sgsunder/octoprint-custom-docker" \
+    org.opencontainers.image.created="${BUILD_DATE}" \
+    org.opencontainers.image.source="https://github.com/sgsunder/octoprint-custom-docker" \
+    org.opencontainers.image.revision="${SOURCE_COMMIT}" \
+    org.opencontainers.image.licenses="MIT"
