@@ -19,7 +19,7 @@ RUN mkdir -p \
         linux-headers \
         build-base \
  && pip install --no-cache-dir --disable-pip-version-check \
-        "OctoPrint==1.9.1" \
+        "OctoPrint==1.9.2" \
         "OctoPrint-Setuptools==1.0.3" \
  && pip install --no-cache-dir --disable-pip-version-check \
         "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.tar.gz" \
