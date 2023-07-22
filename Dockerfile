@@ -24,7 +24,7 @@ RUN mkdir -p \
  && pip install --no-cache-dir --disable-pip-version-check \
         "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.tar.gz" \
         "https://github.com/cp2004/OctoPrint-EEPROM-Marlin/archive/refs/tags/3.3.0.tar.gz" \
-        "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.3.0.tar.gz" \
+        "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/refs/tags/2.3.1.tar.gz" \
         "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/refs/tags/1.1.1.tar.gz" \
         "https://github.com/jneilliii/OctoPrint-ConsolidateTempControl/archive/refs/tags/0.1.10.tar.gz" \
         "https://github.com/jneilliii/OctoPrint-CustomBackground/archive/refs/tags/1.0.0.tar.gz" \
