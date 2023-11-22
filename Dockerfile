@@ -19,7 +19,7 @@ RUN mkdir -p \
         linux-headers \
         build-base \
  && pip install --no-cache-dir --disable-pip-version-check \
-        "OctoPrint==1.9.2" \
+        "OctoPrint==1.9.3" \
         "OctoPrint-Setuptools==1.0.3" \
  && pip install --no-cache-dir --disable-pip-version-check \
         "https://github.com/Birkbjo/OctoPrint-Themeify/archive/refs/tags/v1.2.2.tar.gz" \
@@ -33,7 +33,7 @@ RUN mkdir -p \
         "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/archive/refs/tags/1.28.0.tar.gz" \
         "https://github.com/Salandora/octoprint-customControl/archive/refs/tags/0.2.2.tar.gz" \
         "https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop/archive/refs/tags/1.0.5.tar.gz" \
-        "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.2.1.zip" \
+        "https://github.com/tg44/OctoPrint-Prometheus-Exporter/archive/refs/tags/0.2.2.zip" \
  && apk del .build-deps
 
 WORKDIR /etc/octoprint
